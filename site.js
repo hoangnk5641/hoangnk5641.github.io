@@ -22,7 +22,7 @@
 
   function deal() {
     if (reduced()) return;
-    const deck = document.querySelector('.hero .live').getBoundingClientRect();
+    const deck = document.querySelector('.hero .cta').getBoundingClientRect();
     grid.querySelectorAll('.card').forEach((c, i) => {
       const r = c.getBoundingClientRect();
       c.style.setProperty('--dx', `${deck.left + deck.width / 2 - (r.left + r.width / 2)}px`);
@@ -96,7 +96,7 @@
   document.querySelectorAll('.tip').forEach((t) => t.setAttribute('aria-expanded', 'false'));
 
   // Product clips: Poster first; Play only while in view, pause off screen. Calm mode keeps the play controls.
-  const clips = document.querySelectorAll('video.clip');
+  const clips = document.querySelectorAll('video.clip:not(.sound)');
   if (!reduced() && 'IntersectionObserver' in window) {
     const io = new IntersectionObserver((es) => es.forEach((e) => {
       if (e.isIntersecting) { e.target.preload = 'auto'; e.target.play().catch(() => {}); } else e.target.pause();

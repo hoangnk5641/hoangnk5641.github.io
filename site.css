@@ -76,6 +76,11 @@ main [id] { scroll-margin-top: 72px; }
 .live i { width: 9px; height: 9px; border-radius: 50%; background: var(--live); box-shadow: 0 0 0 3px color-mix(in srgb, var(--live) 30%, transparent); animation: pulse 2s ease-in-out infinite; }
 @keyframes pulse { 50% { opacity: .35; } }
 
+/* The CV is the main hero button (owner, 2026-11-16: BA job hunt); The game moves to the icon row. */
+.cta { display: inline-flex; align-items: center; justify-content: center; gap: 6px; min-height: 48px; padding: 11px 22px; border-radius: 999px; background: var(--btn); color: var(--btn-ink); font-weight: 700; text-decoration: none; }
+.cta small { font-weight: 400; opacity: .8; }
+.cta:hover { filter: brightness(1.08); }
+
 /* Big, clear contact icons (owner, Q-SHW-3): LinkedIn and the CV, nothing else. */
 .icons { list-style: none; margin: 0; padding: 0; display: flex; gap: 12px; }
 .icons a { display: flex; align-items: center; gap: 10px; padding: 6px 16px 6px 6px; border: 1px solid var(--line); border-radius: 14px; background: var(--raised); color: var(--head); font-weight: 600; text-decoration: none; }
@@ -93,7 +98,7 @@ main [id] { scroll-margin-top: 72px; }
 .how-btn::after { content: ''; width: 9px; height: 9px; border-right: 3px solid currentColor; border-bottom: 3px solid currentColor; transform: rotate(45deg) translate(-2px, -2px); }
 .how-btn:hover { filter: brightness(1.08); }
 
-/* ---- App grid: Three card sizes by role (the game, the two apps, the four kits) ---- */
+/* ---- App grid: Three card sizes by place (first app, next two, the rest; The game is last, owner 2026-11-16) ---- */
 .grid { max-width: var(--max); margin: 0 auto; padding: 8px var(--gut) 32px; display: grid; gap: 14px; grid-template-columns: repeat(2, minmax(0, 1fr)); }
 @media (min-width: 900px) { .grid { grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 18px; } }
 .card { display: flex; flex-direction: column; color: inherit; text-decoration: none; overflow: hidden; }
